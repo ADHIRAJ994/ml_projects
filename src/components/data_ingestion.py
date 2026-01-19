@@ -9,6 +9,8 @@ from dataclasses import dataclass
 
 from src.components.data_Transformation import dataTransformation
 from src.components.data_Transformation import dataTransformationConfig
+from src.components.model_trainer import ModelTrainerConfig,ModelTrainer
+@dataclass
 class DataIngestionConfig:
     train_data_path: str = os.path.join('artifacts', 'train.csv')
     test_data_path: str = os.path.join('artifacts', 'test.csv')
@@ -46,8 +48,11 @@ class DataIngestion:
         
 if __name__ == "__main__":
     obj = DataIngestion()
-    
+
     train_data,test_data=obj.initiate_data_ingestion()
 
     data_transformation = dataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr,test_arr))
