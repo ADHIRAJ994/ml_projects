@@ -6,8 +6,8 @@ This project includes a complete ML pipeline (ingestion → transformation → t
 ---
 
 ## 🚀 Live Demo
-- **Web App:** YOUR_RENDER_LINK  
-- **API Health Check:** YOUR_RENDER_LINK/ping *(optional)*
+- **Web App:**   
+- **API Health Check:** 
 
 ---
 
